@@ -22,7 +22,7 @@
 }
 
 header {
-	background-color: #8ad2c0;
+	background-color: black;
 	color: #3b4e49;
 	padding: 0.3em;
 	flex: 0 0 auto;
@@ -30,18 +30,23 @@ header {
 
 nav a {
 	padding: 0.2em 1.5em;
-	color: white;
+	color: rgb(161, 179, 64);
 	cursor: pointer;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
 nav a:hover {
-	color: black;
+	color: white;
 }
 
 main {
 	background-color: #b5e5d9;
 	color: #3b4e49;
 	flex: 1 1 auto;
+}
+
+.ActiveLink {
+	text-decoration: underline;
+	color: red;
 }

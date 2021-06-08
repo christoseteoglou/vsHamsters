@@ -1,10 +1,13 @@
-const LandingPage = () => {
+import React from 'react'
+import './LandingPage.css';
+
+function LandingPage() {
 	return (
-		<div>
+		<div className="Test">
 			<p>hej</p>
 		</div>
 	)
 }
 
-
 export default LandingPage
+
