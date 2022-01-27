@@ -36,7 +36,7 @@ function Gallery() {
 				{data && data.map(hamster => {
 					return(
 						<div key={hamster.id}>
-							< GalleryCard bajsmacka={hamster} />
+							< GalleryCard hamster={hamster} />
 						</div>
 					)
 				})}

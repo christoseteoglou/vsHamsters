@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import './App.css';
 import LandingPage from './components/LandingPage';
 import Gallery from './components/Gallery/Gallery';
+import Battle from './components/Battle/Battle';
 
 function App() {
 	return (
@@ -18,7 +19,10 @@ function App() {
 							{' '}
 							DIS IS GALLERY! <Gallery />
 						</Route>
-						<Route path="/Battle"> FIGHT LITTLE HAMSTERS!</Route>
+						<Route path="/Battle">
+							{' '}
+							<Battle />{' '}
+						</Route>
 						<Route path="/">
 							{' '}
 							WELCOME <LandingPage />{' '}

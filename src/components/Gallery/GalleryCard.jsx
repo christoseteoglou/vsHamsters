@@ -1,11 +1,11 @@
 import React from 'react'
 import './GalleryCard.css'
 
-function GalleryCard({bajsmacka}) {
+function GalleryCard({hamster}) {
 	return (
 			<div>
-				<p> { bajsmacka.name } </p>
-				<img className="hamsters" src={"/img/" + bajsmacka.imgName} alt="" />
+				<p> { hamster.name } </p>
+				<img className="hamsters" src={"/img/" + hamster.imgName} alt="" />
 			</div>
 		
 	)

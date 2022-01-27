@@ -1,5 +1,7 @@
 const getDatabase = require('../database.js');
 const db = getDatabase();
+const admin = require('firebase-admin');
+
 const express = require('express');
 const router = express.Router();
 
@@ -45,11 +47,32 @@ router.get('/:id', async (req, res) => {
 // POST
 router.post('/', async (req, res) => {
 	const object = req.body;
-	if (!object.winnerId && !object.LoserId) {
+	const winnerRef = db.collection('hamsters').doc(object.winnerId);
+	const loserRef = db.collection('hamsters').doc(object.loserId);
+	const winnerHamster = await winnerRef.get();
+	const loserHamster = await loserRef.get();
+
+	if (!object.winnerId && !object.loserId) {
 		console.log(object);
 		res.sendStatus(400);
 		return;
 	}
+
+	if (!winnerHamster.exists || !loserHamster.exists) {
+		console.log('hamster id does not exists');
+		res.sendStatus(400);
+		return;
+	}
+
+	await winnerRef.update({
+		wins: admin.firestore.FieldValue.increment(1),
+		games: admin.firestore.FieldValue.increment(1)
+	});
+
+	await loserRef.update({
+		defeats: admin.firestore.FieldValue.increment(1),
+		games: admin.firestore.FieldValue.increment(1)
+	});
 	const matchesRef = await db.collection('matches').add(object);
 	res.status(200).send({ id: matchesRef.id });
 	return;
