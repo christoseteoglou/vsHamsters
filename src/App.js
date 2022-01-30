@@ -5,6 +5,7 @@ import './App.css';
 import LandingPage from './components/LandingPage';
 import Gallery from './components/Gallery/Gallery';
 import Battle from './components/Battle/Battle';
+import Add from './components/Add/Add';
 
 function App() {
 	return (
@@ -22,6 +23,10 @@ function App() {
 						<Route path="/Battle">
 							{' '}
 							<Battle />{' '}
+						</Route>
+						<Route path="/Add">
+							{' '}
+							<Add />{' '}
 						</Route>
 						<Route path="/">
 							{' '}
