@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import GalleryCard from '../Gallery/GalleryCard';
+import '../Battle/Battle.css'
 
 
 
@@ -97,9 +98,9 @@ function Battle() {
 	  responseData.map((hamster)=> {
 		  return (
 			  <div key={hamster.id}>
-				  <GalleryCard hamster = {hamster} />
+				  <GalleryCard hamster = {hamster}/>
 				  {status &&
-				  <div>
+				  <div key={hamster.id}>
 					<h4>Wins:</h4><p>{hamster.wins}</p>
 					<h4>Defeats:</h4><p>{hamster.defeats}</p>
 					<h4>Matches:</h4><p>{hamster.games}</p>
@@ -107,13 +108,13 @@ function Battle() {
 				  }
 				  {!status &&
 				  
-					<button onClick={()=>postMatch(hamster.id)} > Cutest </button>
+					<button className="btn" onClick={()=>postMatch(hamster.id)} > Cutest </button>
 				  }
 			  </div>
 
 		  )
 	  })}
-	  <button onClick={getRandomHamster}> Start </button>
+	  <button className="btn" onClick={getRandomHamster}> Start </button>
   </div>
   )
 }

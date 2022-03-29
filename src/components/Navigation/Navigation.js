@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import './Navigation.css'
 
 const Navigation = () => {
 	return (
@@ -15,10 +16,10 @@ const Navigation = () => {
 				{' '}
 				Battle
 			</NavLink>
-			<NavLink activeClassName="ActiveLink" to="/Add">
+			{/* <NavLink activeClassName="ActiveLink" to="/Add">
 				{' '}
 				Add
-			</NavLink>
+			</NavLink> */}
 		</nav>
 	);
 };

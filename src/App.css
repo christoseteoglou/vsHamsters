@@ -28,25 +28,15 @@ header {
 	flex: 0 0 auto;
 }
 
-nav a {
-	padding: 0.2em 1.5em;
-	color: rgb(161, 179, 64);
-	cursor: pointer;
-	text-decoration: none;
-	text-transform: uppercase;
-}
 
 nav a:hover {
 	color: white;
 }
 
 main {
-	background-color: #b5e5d9;
+	background-color: #fafafa;
 	color: #3b4e49;
 	flex: 1 1 auto;
 }
 
-.ActiveLink {
-	text-decoration: underline;
-	color: red;
-}
+

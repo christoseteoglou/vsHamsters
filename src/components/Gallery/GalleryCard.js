@@ -4,12 +4,12 @@ import './GalleryCard.css';
 function GalleryCard({ hamster }) {
 	return (
 		<div>
-			<p> {hamster.name} </p>
 			<img
 				className="hamsters"
 				src={hamster.imgName.includes('https') ? hamster.imgName : `/img/${hamster.imgName}`}
 				alt=""
-			/>
+				/>
+			<p> {hamster.name} </p>
 		</div>
 	);
 }

@@ -72,6 +72,7 @@ router.get('/:id', async (req, res) => {
 // POST
 router.post('/', async (req, res) => {
 	const object = req.body;
+	console.log(object, 'BACKENDS');
 	const docRef = await db.collection('hamsters').add(object);
 	if (!object.name || typeof object.age != 'number') {
 		res.sendStatus(400);

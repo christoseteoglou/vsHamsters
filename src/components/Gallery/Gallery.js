@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import GalleryCard from "./GalleryCard";
 import "./Gallery.css";
+import Add from '../Add/Add'
 
 function Gallery() {
   const [data, setData] = useState();
@@ -32,7 +33,7 @@ function Gallery() {
           setReload(false);
         } else {
           setReload(false);
-          throw new Error("Det BRINNER!");
+          throw new Error("Error in fetching the little fluff-balls. Check your fetch request");
         }
       } catch (error) {
         console.log(error.message);
@@ -43,14 +44,17 @@ function Gallery() {
     }
   }, [reload]);
   return (
-    <div>
-      <div className="hamsters">
+    <div >
+      <div className="add--hamsters"> 
+        <Add />
+      </div>
+      <div className="hamsters gallery--container">
         {data &&
           data.map((hamster) => {
             return (
               <div key={hamster.id}>
                 <GalleryCard hamster={hamster} />
-                <button onClick={() => deleteHamster(hamster.id)}>
+                <button className="delete--button" onClick={() => deleteHamster(hamster.id)}>
                   DELETE
                 </button>
               </div>

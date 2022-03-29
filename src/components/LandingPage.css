@@ -1,4 +1,19 @@
-.Test {
-	font-size: 20em;
-	margin-top: 50%;
+.welcome--text {
+	font-size: 4rem;
+	text-align: left;
+	margin-top: 6em;
+	margin-left: 1em;
+}
+
+.welcome--text__information {
+	font-size: 2rem;
+}
+
+.welcome--text__pageDescription{
+	margin-top: 2em;
+}
+
+span {
+	text-decoration: underline;
+	font-size: 2.2rem;
 }

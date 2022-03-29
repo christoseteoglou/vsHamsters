@@ -18,7 +18,7 @@ function App() {
 					<Switch>
 						<Route path="/Gallery">
 							{' '}
-							DIS IS GALLERY! <Gallery />
+							<Gallery />
 						</Route>
 						<Route path="/Battle">
 							{' '}
@@ -30,7 +30,7 @@ function App() {
 						</Route>
 						<Route path="/">
 							{' '}
-							WELCOME <LandingPage />{' '}
+							<LandingPage />{' '}
 						</Route>
 					</Switch>
 				</main>
