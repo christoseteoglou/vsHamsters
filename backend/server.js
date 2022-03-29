@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
-const hamsters = require('./routes/hamsters.js');
+const hamsters = require('../backend/routes/hamsters.js');
 
-const matches = require('./routes/matches');
-const getDatabase = require('./database.js');
+const matches = require('../backend/routes/matches');
+const getDatabase = require('../backend/database.js');
 const db = getDatabase();
 
-const matchWinners = require('./matchWinners.js');
-const winners = require('./winners.js');
-const losers = require('./losers.js');
+const matchWinners = require('../backend/matchWinners.js');
+const winners = require('../backend/winners.js');
+const losers = require('../backend/losers.js');
 
 const PORT = process.env.PORT || 2021;
 
