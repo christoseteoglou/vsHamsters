@@ -2,18 +2,17 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
-const hamsters = require('../backend/routes/hamsters.js');
+const hamsters = require('./routes/hamsters.js');
 
-const matches = require('../backend/routes/matches');
-const getDatabase = require('../backend/database.js');
+const matches = require('./routes/matches');
+const getDatabase = require('./database.js');
 const db = getDatabase();
 
-const matchWinners = require('../backend/matchWinners.js');
-const winners = require('../backend/winners.js');
-const losers = require('../backend/losers.js');
+const matchWinners = require('./matchWinners.js');
+const winners = require('./winners.js');
+const losers = require('./losers.js');
 
 const PORT = process.env.PORT || 2021;
-
 const staticFolder = path.join(__dirname, '../build');
 const staticImageFolder = path.join(__dirname, 'img');
 
@@ -29,8 +28,9 @@ app.use(express.static(staticFolder));
 app.use('/img', express.static(staticImageFolder));
 
 // Routes
-app.get('/', (req, res) => {
-	res.send('Welcome to the Hamster Wars protocol!');
+app.get('*', (req, res) => {
+	/* res.send('Welcome to the Hamster Wars protocol!'); */
+	res.sendFile(path.join(__dirname, '../build/index.html'))
 });
 
 app.use('/hamsters', hamsters);
