@@ -29,10 +29,9 @@ app.use(express.static(staticFolder));
 app.use('/img', express.static(staticImageFolder));
 
 // Routes
-// app.get('/', (req, res) => {
-// 	console.log('GET /');
-// 	res.send('Welcome to the Hamster Wars protocol!');
-// });
+app.get('/', (req, res) => {
+	res.send('Welcome to the Hamster Wars protocol!');
+});
 
 app.use('/hamsters', hamsters);
 app.use('/matches', matches);
